@@ -527,15 +527,17 @@ body{
 	position: relative;
 	float: left;
 	width: 860px;
-	/* height: 850px; */
+	min-height: 850px;
 	background-color: #0b2b3d;
 }
 .guide{
 	padding: 0 10px;
+	display: none
 }	
 .guide img{
 	margin:10px auto;
-	display: block
+	display: block;
+	width: 700px
 }
 .pz_title{
 	font-size: 18px;
