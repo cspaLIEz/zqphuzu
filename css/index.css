@@ -420,20 +420,23 @@ body{
 .nicescroll-cursors{
 	border: none!important;
 }
-.getUrl p:first-of-type{
+.getMessage p{
 	margin-top: 31px;
 	width: 344px;
 	padding: 0 15px;
 	box-sizing: border-box;
 	height: 40px;
 	line-height: 40px;
-	background-color: #ff2a52;
 	border-radius: 20px;
 	font-size: 14px;
 	color: #fff;
 }
-.getUrl p:first-of-type i{
+.getMessage p a{
+	text-decoration: underline;
+}
+.getMessage p i{
 	float: right;
+	font-style: normal;
 }
 .layui-layer-msg{
 	background: rgba(0,0,0,.6)!important;
@@ -444,10 +447,32 @@ body{
 .layui-layer{
 	background: none!important;
 }
-.state-1{
-	width: 486px;
-	height: 40px;
-	background-color: #515457;
+.state-1,.state-0,.state-3{
+	width: 344px!important;
+	background-color: #0c2a3b!important;
+}
+.state-2{
+	width: 486px!important;
+	background-color: #ff2a52!important;
+}
+.state-4{
+	width: 486px!important;
+	color: #103a52!important;
+	background-color: #2fffe9!important;
+}
+.state-4 a{
+	color: #103a52!important;
+}
+.state-5,.state-6,.state-7{
+	width: 486px!important;
+	height: 40px!important;
+	background-color: #515457!important;
+	border-radius: 20px!important;
+}
+.state-8,.state-9,.state-10,.state-11,.state-12{
+	width: 486px!important;
+	background-color: #2f3c43!important;
+	border: solid 1px rgba(47, 255, 233, 0.42)!important;
 }
 
 .Novice_LC{
