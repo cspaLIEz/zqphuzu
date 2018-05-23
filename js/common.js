@@ -123,7 +123,7 @@ function changeTIme(dom) {
 function removeStart($btn) {
 	$("." + $btn).addClass("active");
 	setTimeout(function x() {
-		$("." + $btn).animate({paddingTop: "103px"},3000,"linear",function () {
+		$("." + $btn).animate({paddingTop: "121px"},3000,"linear",function () {
 			$(this).find("li").last().prependTo($(this).find("ul"));
 			$(this).css("paddingTop","0px")
 		});
