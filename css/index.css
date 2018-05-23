@@ -1,6 +1,6 @@
 body{
 	min-width: 1200px;
-	background: url(../images/body_back.jpg) center top no-repeat;
+	background:#0b1c26 url(../images/body_back.jpg) center top no-repeat;
 }
 .header{
 	width: 100%;
@@ -450,3 +450,58 @@ body{
 	background-color: #515457;
 }
 
+.Novice_LC{
+	width: 250px;
+	min-height: 60px;
+	background:url(../images/Novice_lc.png) no-repeat;
+	background-size: 250px 60px;
+	margin: 10px auto 0;
+	color: #1dbdac;
+	font-size: 18px;
+	line-height: 60px;
+	cursor: pointer;
+	}
+	.Novice_LC.NLC_active .Novice_top{
+		color: #2fffe9;
+		background:url(../images/Novice_tl.png) no-repeat;
+		background-size: 250px 60px;
+	}
+	/* .Novice_LC.NLC_active .Novice_ul{
+		display: block
+	} */
+.Novice_top:hover{
+	color: #2fffe9;
+	background:url(../images/Novice_tl.png) no-repeat;
+	background-size: 250px 60px;
+}
+.Novice_ul{
+	display: none;
+	cursor: pointer;
+	background:#0a1d28;
+
+}
+.Novice_ul img{display: none}
+.Novice_ul .N_active img{
+	display: inline-block;
+	margin-right: 8px;
+	margin-top: -5px;
+}
+.Novice_ul .N_active{
+	color:#ff2a52
+
+}
+/* .Novice_ul li:hover img{
+	display: inline-block;
+	
+} */
+.Novice_ul li:hover{
+	color:#ff2a52
+	
+}
+.exchange{
+	position: relative;
+	float: left;
+	width: 860px;
+	height: 850px;
+	background-color: #0b2b3d;
+}	

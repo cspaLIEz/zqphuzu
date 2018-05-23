@@ -36,7 +36,7 @@ $(function () {
 });
 
 	//记录兑换信息,弹窗间传递
-	var code,phone,orderId,game,li;
+	var code,phone,orderId,game,li,id;
 
 	//cdk兑换
 	$(".skinLayer").click(function (e) {
@@ -78,28 +78,39 @@ $(function () {
 	$(document).on("click",".sureChanges",function () {
 		if(!$(this).hasClass("active")) return;
 		$(this).ajaxPost(url + "api/tradeoffers/withdraw",{game: game,cdkey: code,phoneNumber: phone,orderId: orderId,tradeUrl: $(".inputUrl input").val()},function (res) {
-			if(res.success){
-				layer.closeAll();
-				var Html = $("#trade").html().replace("<li></li>",li);
-				layer.open({
-					type: 1,
-					title: false,
-					area: ["708px","629px"],
-					content: Html
-				});
-				$(".ulbox ul").niceScroll();
-				setTimeout(function x() {
-					$(this).ajaxPost(url + "/api/TradeOffers/polling",{"ids": [orderId]},function (res) {
-						if(!res.success || !res.data ) return showError(res.message || "报价发送失败,请重试")
+			if(!res.success) return showError(res.message || "请求失败");
 
-						var state = res.data.state;
-						var message = res.data.message;
-						if(state == 1 || state == 2 || state == 3 || state == 4){
+			//steam交易id
+			id = res.data.responses[0].id;
 
-						}
-					})
+			layer.closeAll();
+			var Html = $("#trade").html().replace("<li></li>",li);
+			layer.open({
+				type: 1,
+				title: false,
+				area: ["708px","629px"],
+				content: Html
+			});
+			$(".ulbox ul").niceScroll();
+			setTimeout(function x() {
+				$(this).ajaxPost(url + "api/TradeOffers/polling",{"ids": [id]},function (res) {
+					if(!res.success || !res.data ) return showError(res.message || "报价发送失败,请重试")
+
+					var state = res.data[0].state;
+					var elapsed = res.data[0].elapsed;
+					var message = res.data[0].message;
+					if(state >= 0 && state <= 5 && state != 4){
+						$(".getMessage p").removeClass().addClass("state-" + state).find("span").html(message).next().text(elapsed + "s");
+						setTimeout(x,1000)
+					} else if (state >= 5 && state <= 12 || state == 4){
+						$(".getMessage p").removeClass().addClass("state-" + state).find("span").html(message).next().text(elapsed + "s");
+						$(document).on("click",".btn_close",function (e) {
+							e.preventDefault();
+							layer.closeAll();
+						})
+					}
 				})
-			}
+			},0);
 		});
 
 	});
