@@ -114,6 +114,17 @@ $(function () {
 		});
 
 	});
+	$(".swiper li").click(function(){
+		$(".guide").hide().eq($(this).attr("data-index")).show()
+		$(".N_active").removeClass("N_active")
+		$(this).addClass("N_active")
+
+	})
+	$(".Novice_top").click(function(){
+		$(".Novice_ul").slideUp()
+		$(".Novice_LC").removeClass("NLC_active")
+		$(this).next(".Novice_ul").slideDown().parent(".Novice_LC").addClass("NLC_active")
+	})
 
 	$(".rightBotton li").hover(function () {
 		$(this).css({background: "url("+ $(this).attr("data-url") +") center no-repeat",border: "1px solid transparent"})
