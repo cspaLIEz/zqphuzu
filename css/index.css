@@ -1,6 +1,6 @@
 body{
 	min-width: 1200px;
-	background:#0b1c26 url(../images/body_back.jpg) center top no-repeat;
+	background: rgb(8,34,47) url(../images/body_back.jpg) center top no-repeat;
 }
 .header{
 	width: 100%;
@@ -498,10 +498,32 @@ body{
 	color:#ff2a52
 	
 }
-.exchange{
+.exchange_a{
 	position: relative;
 	float: left;
 	width: 860px;
-	height: 850px;
+	/* height: 850px; */
 	background-color: #0b2b3d;
+}
+.guide{
+	padding: 0 10px;
 }	
+.guide img{
+	margin:10px auto;
+	display: block
+}
+.pz_title{
+	font-size: 18px;
+	color:#fff;
+	text-align: center;
+	margin: 10px 0
+}
+.pz_para{
+	font-size: 14px;
+	color: #afafaf;
+	text-indent: 2em
+}
+.pz_littitle{
+	font-size: 16px;
+	color: #2fffe9
+}
