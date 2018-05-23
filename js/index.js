@@ -115,4 +115,13 @@ $(function () {
 
 	});
 
+	$(".rightBotton li").hover(function () {
+		$(this).css({background: "url("+ $(this).attr("data-url") +") center no-repeat",border: "1px solid transparent"})
+	},function () {
+		$(this).css({background: "",border: "1px solid #206f9c"})
+	})
+
+	$(".rightBotton .toTop").click(function () {
+		$("html").animate({scrollTop: "0px"},500)
+	})
 });
