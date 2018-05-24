@@ -121,9 +121,14 @@ $(function () {
 
 	})
 	$(".Novice_top").click(function(){
+		// ($(this).parent(".Novice_LC").is(".NLC_active"))
+	if($(this).parent(".Novice_LC").is(".NLC_active")){
+		return false
+	}
 		$(".Novice_ul").slideUp()
 		$(".Novice_LC").removeClass("NLC_active")
 		$(this).next(".Novice_ul").slideDown().parent(".Novice_LC").addClass("NLC_active")
+		$(this).next(".Novice_ul").find("li").eq(0).click()
 	})
 
 	$(".rightBotton li").hover(function () {
