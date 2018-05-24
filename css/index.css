@@ -247,17 +247,16 @@ body{
 
 }
 .footer{
-	margin-top: 99px;
+	margin-top: 75px;
 	width: 100%;
-	height: 192px;
 	background-color: #0b1c26;
 }
 .footer ul li{
 	float: left;
-	width: 33%;
+	width: 25%;
 	box-sizing: border-box;
 	padding: 25px 0 0 45px;
-	height: 192px;
+	height: 137px;
 }
 .footer ul li .img{
 	float: left;
@@ -273,6 +272,7 @@ body{
 }
 .footer ul li .text h4{
 	font-size: 18px;
+	line-height: 73px;
 	font-weight: normal;
 }
 .getUrl{
@@ -319,6 +319,9 @@ body{
 }
 .layui-layer{
 	background: none;
+}
+.layui-layer-msg .layui-layer-content{
+	background: rgba(0,0,0,0.6);
 }
 .getUrl .toSee{
 	height: 57px;
