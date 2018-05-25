@@ -557,7 +557,8 @@ body{
 	line-height: 23px;
 	font-size: 14px;
 	color: #afafaf;
-	text-indent: 2em
+	text-indent: 2em;
+	line-height: 22px
 }
 .pz_littitle{
 	font-size: 16px;
