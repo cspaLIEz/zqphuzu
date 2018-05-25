@@ -239,6 +239,11 @@ body{
 	border-radius: 8px;
 	border: solid 1px #206f9c;
 }
+.exchange .rightBotton li a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
 .exchange .rightBotton li.toTop{
 	cursor: pointer;
 	background: #103a52 url(../images/toTop.png) center no-repeat;
@@ -549,6 +554,7 @@ body{
 	margin: 10px 0
 }
 .pz_para{
+	line-height: 23px;
 	font-size: 14px;
 	color: #afafaf;
 	text-indent: 2em
@@ -556,4 +562,8 @@ body{
 .pz_littitle{
 	font-size: 16px;
 	color: #2fffe9
+}
+.linkQq{
+	text-decoration: underline;
+	color: #2fffe9!important;
 }

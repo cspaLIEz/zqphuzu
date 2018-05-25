@@ -1,6 +1,11 @@
 $(function () {
 
-	var url = "http://localhost:8001/";
+	if(location.href.indexOf("tanwandao.com") == -1){
+		var url = "http://localhost:8001/";
+	} else {
+		var url = "http://api.tanwandao.com/";
+	}
+
 	var token = "";
 
 	removeStart("ulBox");
@@ -114,6 +119,17 @@ $(function () {
 		});
 
 	});
+	if(location.href.indexOf("#") != -1){
+		var obj = {};
+		var data = location.href.split("#")[1].split("&");
+		for(var i =0;i<data.length;i++){
+			obj[data[i].split("=")[0]] = data[i].split("=")[1]
+		}
+		$(".Novice_LC").eq(obj.table-1).addClass("NLC_active").find("ul").slideDown().parent().siblings(".Novice_LC").removeClass("NLC_active").find("ul").slideUp();
+		$(".Novice_ul").find("li").eq(obj.index-1).addClass("N_active").siblings().removeClass("N_active");
+		$(".guide").eq(obj.index-1).show().siblings().hide()
+	}
+
 	$(".swiper li").click(function(){
 		$(".guide").hide().eq($(this).attr("data-index")).show()
 		$(".N_active").removeClass("N_active")
@@ -121,9 +137,13 @@ $(function () {
 
 	})
 	$(".Novice_top").click(function(){
-		$(".Novice_ul").slideUp()
-		$(".Novice_LC").removeClass("NLC_active")
-		$(this).next(".Novice_ul").slideDown().parent(".Novice_LC").addClass("NLC_active")
+		if($(this).next().css("display") == "block"){
+			return $(this).next().slideUp()
+		}
+		$(".Novice_LC").removeClass("NLC_active");
+		$(".Novice_ul li").removeClass("N_active")
+		$(this).next(".Novice_ul").slideDown().find("li:first").addClass("N_active").parent(".Novice_LC").addClass("NLC_active");
+		$(".guide").eq($(".Novice_ul li.N_active").attr("data-index")).show().siblings().hide()
 	})
 
 	$(".rightBotton li").hover(function () {
